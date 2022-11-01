@@ -8,7 +8,7 @@ export const AuthRoutes = () => {
         <Route path='login' element={ <LoginPage/> }/>
         <Route path='login' element={ <LoginPage/> }/>
 
-        <Route path='/*' element={ <Navigate to=''}/>
+        <Route path='/*' element={ <Navigate to='' />}/>
     </Routes>
   )
 }
