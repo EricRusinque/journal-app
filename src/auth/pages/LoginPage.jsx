@@ -8,16 +8,18 @@ import { useDispatch, useSelector } from 'react-redux';
 import { checkingAuthentication, startGoogleSignIn, startLoginWithEmailPassword } from '../../store/auth';
 import { useMemo } from 'react';
 
+const formData = {
+  email: 'Eric@gmail.com',
+  password: '12345678'
+}
+
 export const LoginPage = () => {
 
     const { status, errorMessage } = useSelector( state => state.auth );
 
     const dispatch = useDispatch();
 
-    const { email, password, onInputChange, formState } =  useForm({
-      email: 'Eric@gmail.com',
-      password: '12345678'
-    });
+    const { email, password, onInputChange, formState } =  useForm(formData);
     
     const isAuthenticated = useMemo( () => status === 'checking', [status]);
 
